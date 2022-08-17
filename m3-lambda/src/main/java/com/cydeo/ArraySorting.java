@@ -6,8 +6,13 @@ public class ArraySorting {
         QuickSort qs = new QuickSort();
         BubbleSort bs = new BubbleSort();
 
-        qs.sort();
-        bs.sort();
+//        qs.sort();
+//        bs.sort();
+
+        Sorting quickSort = () -> System.out.println("Quick sorting");
+        as.sort(quickSort);
+
+        as.sort(() -> System.out.println("Bubblr sort"));
     }
 
     private static void sort(Sorting sorting){
