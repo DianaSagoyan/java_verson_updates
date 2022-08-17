@@ -19,7 +19,7 @@ public class Main {
             System.out.println(currency);
         }
 
-        //Using enum in swith
+        //Using enum in switch
         switch (Currency.PENNY) {
             case PENNY:
                 System.out.println("It it 1 cent");
@@ -33,7 +33,27 @@ public class Main {
             case QUARTER:
                 System.out.println("It it 25 cent");
                 break;
+        }
 
+        //Math operators task
+        calculate(3, 5, Operators.DEVISE);
+
+    }
+
+    private static void calculate(double x, double y, Operators op){
+        switch (op){
+            case ADD:
+                System.out.println(x + y);
+                break;
+            case SUBTRACT:
+                System.out.println(x - y);
+                break;
+            case MULTIPLY:
+                System.out.println(x * y);
+                break;
+            case DEVISE:
+                System.out.println(x / y);
+                break;
         }
     }
 }
