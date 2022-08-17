@@ -1,4 +1,4 @@
-package com.cydeo.orangeTask;
+package com.cydeo.tasks;
 
 public enum Color {
     RED, GREEN

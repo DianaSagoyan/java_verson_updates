@@ -1,4 +1,4 @@
-package com.cydeo.orangeTask;
+package com.cydeo.tasks;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
