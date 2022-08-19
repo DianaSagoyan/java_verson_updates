@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Stream;
 
 public class DishTest {
     public static void main(String[] args) {
@@ -41,5 +42,7 @@ public class DishTest {
                 .sorted(Comparator.comparing(Dish::getCalories).reversed())
                 .map(Dish::getName)
                 .forEach(System.out::println);
+
+
     }
 }
