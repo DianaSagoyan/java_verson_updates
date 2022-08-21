@@ -16,7 +16,7 @@ public class FindingMatching {
         System.out.println("--------------------------------------");
 
         //ANY MATCH
-        if(DishData.getAll().stream().anyMatch(Dish::isVegetarian)){
+        if (DishData.getAll().stream().anyMatch(Dish::isVegetarian)) {
             System.out.println("The menu is vegetarian friendly");
         }
 
@@ -48,8 +48,8 @@ public class FindingMatching {
 
         System.out.println("--------------------------------------");
 
-        List<String> list1 = Arrays.asList("Jhonny","David","Jack","Duke","Jill","Dany","Julia","Jenish","Divya");
-        List<String> list2 = Arrays.asList("Jhonny","David","Jack","Duke","Jill","Dany","Julia","Jenish","Divya");
+        List<String> list1 = Arrays.asList("Jhonny", "David", "Jack", "Duke", "Jill", "Dany", "Julia", "Jenish", "Divya");
+        List<String> list2 = Arrays.asList("Jhonny", "David", "Jack", "Duke", "Jill", "Dany", "Julia", "Jenish", "Divya");
 
         Optional<String> findFirst = list1.parallelStream().filter(s -> s.startsWith("D")).findFirst();
         Optional<String> findAny = list1.parallelStream().filter(s -> s.startsWith("J")).findAny();
@@ -66,5 +66,37 @@ public class FindingMatching {
 
         Optional<Dish> dMax = DishData.getAll().stream().max(Comparator.comparing(Dish::getCalories));
         System.out.println(dMax);
+
+        System.out.println("--------------------------------------");
+
+//        int calories = DishData.getAll().stream()
+//                .map(Dish::getCalories)
+//                .reduce( (a, b) -> a + b).get();
+
+        Optional<Integer> calories = DishData.getAll().stream()
+                .map(Dish::getCalories)
+//                .reduce( (a, b) -> a + b);
+                .reduce(Integer::sum);
+        System.out.println(calories.get());
+
+        System.out.println("--------------------------------------");
+
+
+        //Max and Min
+        List<Integer> numbers = Arrays.asList(4, 5, 9, 3);
+
+        Optional<Integer> min = numbers.stream().reduce(Integer::min);
+        Optional<Integer> max = numbers.stream().reduce(Integer::max);
+        Optional<Integer> sum = numbers.stream().reduce(Integer::sum);
+
+        System.out.println("Min:" + min);
+        System.out.println("Max:" + max);
+        System.out.println("Sum:" + sum);
+
+        System.out.println("--------------------------------------");
+
+        //COUNT
+        long dishCount = DishData.getAll().stream().count();
+        System.out.println(dishCount);
     }
 }
