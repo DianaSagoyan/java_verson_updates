@@ -18,6 +18,7 @@ public class EmployeeTest {
                 .flatMap(employee -> employee.getEmpPhoneNumber().stream())
                 .forEach(System.out::println);
 
+
         EmployeeData.readAll()
                 .map(Employee::getEmpPhoneNumber)
                 .flatMap(List::stream)
