@@ -98,5 +98,6 @@ public class FindingMatching {
         //COUNT
         long dishCount = DishData.getAll().stream().count();
         System.out.println(dishCount);
+
     }
 }
